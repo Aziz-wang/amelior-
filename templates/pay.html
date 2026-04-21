@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement Mobile Money</title>
+<link rel="stylesheet" href="/static.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💰 Paiement Mobile Money</h1>
+
+<select id="method">
+    <option value="airtel">Airtel Money</option>
+    <option value="orange">Orange Money</option>
+    <option value="moov">Moov Flooz</option>
+    <option value="wave">Wave</option>
+    <option value="mynita">MyNita</option>
+</select>
+
+<input id="amount" placeholder="Montant XOF">
+
+<button onclick="pay()">Payer maintenant</button>
+
+</div>
+
+<script>
+function pay(){
+    let method = document.getElementById("method").value;
+
+    if(method === "airtel"){
+        window.location.href = "tel:*500#";
+    }
+
+    else if(method === "orange"){
+        window.location.href = "tel:#144#";
+    }
+
+    else if(method === "moov"){
+        window.location.href = "tel:*555#";
+    }
+
+    else if(method === "wave"){
+        alert("Ouvre ton app Wave et valide le paiement");
+    }
+
+    else if(method === "mynita"){
+        alert("MyNita : suis les instructions de paiement dans ton application");
+    }
+}
+</script>
+
+</body>
+</html>

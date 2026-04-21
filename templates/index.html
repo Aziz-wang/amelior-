@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickDrop Niger</title>
+<link rel="stylesheet" href="/static.css">
+</head>
+
+<body>
+<div class="container">
+
+<h1>🇳🇪 QuickDrop Niamey</h1>
+
+<a href="/create">➕ Nouvelle livraison</a>
+
+<h2>📦 Livraisons</h2>
+
+{% for d in deliveries %}
+<div class="card">
+
+<p><b>Client:</b> {{ d[1] }}</p>
+<p>📍 {{ d[2] }} → {{ d[3] }}</p>
+<p>💰 {{ d[4] }} XOF</p>
+<p>📊 {{ d[5] }}</p>
+
+{% if d[5] == "pending" %}
+<a href="/accept/{{ d[0] }}">✔ Accepter</a>
+{% endif %}
+
+{% if d[5] == "accepted" %}
+<a href="/driver/{{ d[0] }}">📍 GPS Livreur</a>
+<a href="/map/{{ d[0] }}">🗺 Suivi Niamey</a>
+<a href="/pay/{{ d[0] }}">💰 Paiement</a>
+<a href="/deliver/{{ d[0] }}">📦 Livré</a>
+{% endif %}
+
+</div>
+{% endfor %}
+
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/static.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+#map { height: 500px; }
+</style>
+</head>
+
+<body>
+
+<h2>🗺 Niamey Live Tracking</h2>
+
+<div id="map"></div>
+
+<script>
+let map = L.map('map').setView([13.5125, 2.1128], 12); // Niamey
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+attribution:"QuickDrop Niger"
+}).addTo(map);
+
+let marker = L.marker([13.5125,2.1128]).addTo(map);
+
+async function update(){
+let r = await fetch("/last_location/{{ delivery_id }}");
+let d = await r.json();
+
+if(d.lat){
+marker.setLatLng([d.lat,d.lng]);
+map.setView([d.lat,d.lng],15);
+}
+}
+
+setInterval(update,3000);
+update();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    font-family: Arial;
+    background: #eef2f7;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.container {
+    width: 95%;
+    max-width: 600px;
+    margin: auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.card {
+    background: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* buttons */
+a {
+    display: block;
+    padding: 12px;
+    margin-top: 8px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a[href*="accept"] { background: #27ae60; color: white; }
+a[href*="deliver"] { background: #2980b9; color: white; }
+a[href*="map"] { background: #8e44ad; color: white; }
+a[href*="driver"] { background: #f39c12; color: white; }
+a[href*="pay"] { background: #e67e22; color: white; }
+
+/* inputs */
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 6px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}

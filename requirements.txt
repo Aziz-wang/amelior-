@@ -103,4 +103,3 @@ wget==3.2
 wordlist==1.0.1
 wsproto==1.3.2
 yarl==1.23.0
-Flask==3.0.0
